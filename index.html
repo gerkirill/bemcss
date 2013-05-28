@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="style.css">
+
+<div>
+	<h3>Context dependency</h3>
+	<div class="alert">This is alert by <a href="" class="link">itself</a></div>
+
+	<div class="box l-vertically-padded-alot">
+		<a href="" class="link">Here is a box link </a>
+		<div class="alert">This is alert <a href="" class="link">inside</a> the box <= link is affected by the block link style</div>
+	</div>
+
+	<h3>Solution</h3>
+	<div class="b-alert">This is alert by <a href="" class="b-alert__link">itself</a></div>
+
+	<div class="b-box l-vertically-padded-alot">
+		<a href="" class="b-box__link">Here is a box link </a>
+		<div class="b-alert">This is alert by <a href="" class="b-alert__link">inside</a> the box <= link looks the same as above</div>
+	</div>
+
+	<h3>Solution to additional requirement</h3>
+	<div class="b-alert">This is alert by <a href="" class="b-alert__link">itself</a></div>
+
+	<div class="b-box l-vertically-padded-alot">
+		<a href="" class="b-box__link">Here is a box link </a>
+		<div class="b-alert">This is alert by <a href="" class="b-alert__link b-alert__link_decoration_none">inside</a> the box <= here we use modifier class to remove underscore</div>
+	</div>
+	<pre>
+Wrap-up: you can use nested css selectors untill you sure:
+1) there will be no nested blocks which use the same classes (or no nested blocks at all)
+2) there will be no wrapping blocks using the same classes
+3) there will be no global css classes with the same name
+4) as BEM utilize minimum priority selectors - it is hard to use BEM for some block in a project 
+   already polluted with global styles which use tag names. But otherwise - bem class names look pretty
+   unique and thus should not be affected by the styles assigned to global, unprefixed classes.
+	</pre>
+</div>
