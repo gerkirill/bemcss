@@ -1,0 +1,10 @@
+/** alert block */
+.b-alert {
+	color:red;
+	// __ separates block name and element name. There should be only one __ in class name
+	&__link { color:#994444; text-decoration: underline}
+	// additional requirement: in the box we want alert link not-underscored
+	// so we introduce context-independent modification, class to be used along with .b-alert__link 
+	// modificator class suffix format is: "_<thing-we-modify>_<the-way-we-modify-it>" 
+	&__link_decoration_none { text-decoration:none; }
+}

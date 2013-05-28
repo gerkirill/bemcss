@@ -1,30 +1,47 @@
 /** Problem : we want alert block to look the same despite its placing */
-
 /** style for alert box and link inside it */
-.alert { color:red; }
-.alert .link { color:#994444; }
-
+.alert {
+  color: red;
+}
+.alert .link {
+  color: #994444;
+}
 /** this rule will also affect link of alert once it is inserted into box */
-.box .link { color: blue; }
-
-
-/** Solution: long class names */
-.b-alert { color:red; }
-/** __ separates block name and element name. There should be only one __ in class name */
-.b-alert__link { color:#994444; text-decoration: underline}
-
-.b-box__link { color:blue; }
-
-/** additional requirement: in the box we want alert link not-underscored */
-/** so we introduce context-independent modification, class to be used along with .b-alert__link */
-/** modificator class suffix format is: "_<thing-we-modify>_<the-way-we-modify-it>" */
-.b-alert__link_decoration_none { text-decoration:none; }
-
-/*example global classes*/
-.g-float-left {float:left;} /* just to not use "style" attribute */
-.g-float-right {float:right;}
-
-/*example layout classes*/
-.l-vertically-padded-medium {margin-top:6px; margin-bottom:6px;}
-.l-vertically-padded-alot {margin-top:12px; margin-bottom:12px;}
-.l-left-indented {padding-left: 15px;}
+.box .link {
+  color: blue;
+}
+/*  global classes */
+.g-float-left {
+  float: left;
+}
+/* just to not use "style" attribute */
+.g-float-right {
+  float: right;
+}
+/* layout classes */
+.l-vertically-padded-medium {
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+.l-vertically-padded-alot {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+.l-left-indented {
+  padding-left: 15px;
+}
+/* box block */
+.b-box__link {
+  color: blue;
+}
+/** alert block */
+.b-alert {
+  color: red;
+}
+.b-alert__link {
+  color: #994444;
+  text-decoration: underline;
+}
+.b-alert__link_decoration_none {
+  text-decoration: none;
+}

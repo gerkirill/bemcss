@@ -1,0 +1,13 @@
+/** Problem : we want alert block to look the same despite its placing */
+
+/** style for alert box and link inside it */
+.alert { color:red; }
+.alert .link { color:#994444; }
+
+/** this rule will also affect link of alert once it is inserted into box */
+.box .link { color: blue; }
+
+@import "global.less";
+@import "layout.less";
+@import "box.less";
+@import "alert.less";
